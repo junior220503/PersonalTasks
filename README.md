@@ -8,8 +8,6 @@ Funcionalidades
 
 - Exclusão de tarefas
 
-- Interface simples e intuitiva
-
 -Armazenamento local usando SQLite
 
 Instalação
@@ -17,7 +15,7 @@ Instalação
 
 - git clone <URL-do-repositório>
 
-- Abra o projeto no Android Studio (versão recomendada: Arctic Fox ou superior).
+- Abra o projeto no Android Studio.
 
 - Sincronize os arquivos Gradle.
 
