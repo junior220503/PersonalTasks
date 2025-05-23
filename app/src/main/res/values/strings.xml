@@ -7,4 +7,5 @@
     <string name="remove_task">remove task</string>
     <string name="edit_task">edit task</string>
     <string name="detail_task">detail task</string>
+    <string name="add_task">add task</string>
 </resources>

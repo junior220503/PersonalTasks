@@ -53,6 +53,7 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.protolite.well.known.types)
     kapt(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
