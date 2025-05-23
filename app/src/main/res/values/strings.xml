@@ -4,4 +4,7 @@
     <string name="description">description</string>
     <string name="deadline">deadline</string>
     <string name="save">save</string>
+    <string name="remove_task">remove task</string>
+    <string name="edit_task">edit task</string>
+    <string name="detail_task">detail task</string>
 </resources>
