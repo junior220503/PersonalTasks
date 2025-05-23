@@ -29,3 +29,6 @@ Uso
 - Para adicionar uma nova tarefa, toque no botão de adicionar (ícone de +).
 
 - Para excluir, consultar ou editar uma tarefa use o menu de contexto que aparece ao pressionar e segurar a tarefa.
+
+Vídeo usando a aplicação:
+https://youtube.com/shorts/Yvaz-3-6H7E?feature=share
