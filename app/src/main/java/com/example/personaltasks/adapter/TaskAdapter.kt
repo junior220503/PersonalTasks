@@ -18,6 +18,7 @@ class TaskAdapter (
         val titleTile: TextView = ttb.titleTv
         val descriptionTile: TextView = ttb.descriptionTv
         val deadlineTile: TextView = ttb.deadlineTv
+        val statusTile: TextView = ttb.statusTv
 
         init {
             ttb.root.setOnCreateContextMenuListener {menu, v, menuInfo ->
@@ -56,6 +57,7 @@ class TaskAdapter (
                 titleTile.text = task.title
                 descriptionTile.text = task.description
                 deadlineTile.text = task.deadline
+                statusTile.text = task.status
             }
         }
     }

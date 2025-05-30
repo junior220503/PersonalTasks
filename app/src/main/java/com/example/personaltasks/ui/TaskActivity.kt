@@ -77,6 +77,7 @@ class TaskActivity : AppCompatActivity() {
                 titleEt.setText(it.title)
                 descriptionEt.setText(it.description)
                 deadlineEt.setText(it.deadline)
+                statusEt.setText(it.status)
 
                 // Verifica se a activity foi aberta apenas para visualização
                 val viewTask = intent.getBooleanExtra(EXTRA_VIEW_TASK, false)
@@ -85,6 +86,7 @@ class TaskActivity : AppCompatActivity() {
                     titleEt.isEnabled = false
                     descriptionEt.isEnabled = false
                     deadlineEt.isEnabled = false
+                    statusEt.isEnabled = false
 
                     // Oculta botão salvar e mostra botão cancelar
                     saveBt.visibility = View.GONE
@@ -106,6 +108,7 @@ class TaskActivity : AppCompatActivity() {
             saveBt.setOnClickListener {
                 val title = titleEt.text.toString().trim()
                 val description = descriptionEt.text.toString().trim()
+                val status = statusEt.text.toString().trim()
 
                 // Validação básica para campos obrigatórios
                 if(title.isEmpty()) {
@@ -120,12 +123,19 @@ class TaskActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
+                if(status.isEmpty()) {
+                    descriptionEt.error = "Status é obrigatório!"
+                    descriptionEt.requestFocus()
+                    return@setOnClickListener
+                }
+
                 // Cria ou atualiza o objeto Task
                 val task = Task (
                     receivedTask?.id?:hashCode(),
                     titleEt.text.toString(),
                     descriptionEt.text.toString(),
-                    deadlineEt.text.toString()
+                    deadlineEt.text.toString(),
+                    statusEt.text.toString()
                 )
 
                 // Prepara o resultado para enviar de volta à MainActivity

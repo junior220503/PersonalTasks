@@ -9,4 +9,5 @@
     <string name="detail_task">detail task</string>
     <string name="add_task">add task</string>
     <string name="cancel">cancel</string>
+    <string name="status">status</string>
 </resources>

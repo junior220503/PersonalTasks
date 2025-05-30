@@ -17,12 +17,14 @@ class TaskSqlite (context: Context): TaskDAO{
         private val TITLE_COLUMN = "title"
         private val DESCRIPTION_COLUMN = "description"
         private val DEADLINE_COLUMN = "deadline"
+        private val STATUS_COLUMN = "status"
 
         val CREATE_TASK_TABLE = "CREATE TABLE IF NOT EXISTS $TASK_TABLE (" +
                 "$ID_COLUMN INTEGER NOT NULL PRIMARY KEY, " +
                 "$TITLE_COLUMN TEXT NOT NULL, " +
                 "$DESCRIPTION_COLUMN TEXT NOT NULL, " +
-                "$DEADLINE_COLUMN TEXT NOT NULL );"
+                "$DEADLINE_COLUMN TEXT NOT NULL," +
+                "$STATUS_COLUMN TEXT NOT NULL );"
     }
 
     private val taskDatabase: SQLiteDatabase = context.openOrCreateDatabase(
@@ -44,6 +46,7 @@ class TaskSqlite (context: Context): TaskDAO{
         put(TITLE_COLUMN, title)
         put(DESCRIPTION_COLUMN, description)
         put(DEADLINE_COLUMN, deadline)
+        put(STATUS_COLUMN, status)
     }
 
     override fun createTask(task: Task): Long = taskDatabase.insert(TASK_TABLE, null, task.toContentValues())
@@ -52,7 +55,8 @@ class TaskSqlite (context: Context): TaskDAO{
         getInt(getColumnIndexOrThrow(ID_COLUMN)),
         getString(getColumnIndexOrThrow(TITLE_COLUMN)),
         getString(getColumnIndexOrThrow(DESCRIPTION_COLUMN)),
-        getString(getColumnIndexOrThrow(DEADLINE_COLUMN))
+        getString(getColumnIndexOrThrow(DEADLINE_COLUMN)),
+        getString(getColumnIndexOrThrow(STATUS_COLUMN))
     )
 
     override fun retrieveTask(id: Int): Task {
