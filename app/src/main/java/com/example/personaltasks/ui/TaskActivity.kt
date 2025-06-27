@@ -78,6 +78,8 @@ class TaskActivity : AppCompatActivity() {
                 descriptionEt.setText(it.description)
                 deadlineEt.setText(it.deadline)
                 statusEt.setText(it.status)
+                priorityEt.setText(it.priority)
+
 
                 // Verifica se a activity foi aberta apenas para visualização
                 val viewTask = intent.getBooleanExtra(EXTRA_VIEW_TASK, false)
@@ -87,6 +89,7 @@ class TaskActivity : AppCompatActivity() {
                     descriptionEt.isEnabled = false
                     deadlineEt.isEnabled = false
                     statusEt.isEnabled = false
+                    priorityEt.isEnabled = false
 
                     // Oculta botão salvar e mostra botão cancelar
                     saveBt.visibility = View.GONE
@@ -135,7 +138,8 @@ class TaskActivity : AppCompatActivity() {
                     titleEt.text.toString(),
                     descriptionEt.text.toString(),
                     deadlineEt.text.toString(),
-                    statusEt.text.toString()
+                    statusEt.text.toString(),
+                    priorityEt.text.toString()
                 )
 
                 // Prepara o resultado para enviar de volta à MainActivity

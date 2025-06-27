@@ -10,4 +10,5 @@
     <string name="add_task">add task</string>
     <string name="cancel">cancel</string>
     <string name="status">status</string>
+    <string name="priority">priority</string>
 </resources>

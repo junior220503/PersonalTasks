@@ -2,6 +2,7 @@ package com.example.personaltasks.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,7 @@ class TaskAdapter (
         val descriptionTile: TextView = ttb.descriptionTv
         val deadlineTile: TextView = ttb.deadlineTv
         val statusTile: TextView = ttb.statusTv
+        val priorityTile: TextView = ttb.priorityTv
 
         init {
             ttb.root.setOnCreateContextMenuListener {menu, v, menuInfo ->
@@ -58,6 +60,7 @@ class TaskAdapter (
                 descriptionTile.text = task.description
                 deadlineTile.text = task.deadline
                 statusTile.text = task.status
+                priorityTile.text = task.priority
             }
         }
     }
