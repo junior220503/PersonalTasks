@@ -16,6 +16,7 @@ import com.example.personaltasks.databinding.ActivityMainBinding
 import com.example.personaltasks.model.Constants.EXTRA_TASK
 import com.example.personaltasks.model.Constants.EXTRA_VIEW_TASK
 import com.example.personaltasks.model.Task
+import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -45,6 +46,14 @@ class MainActivity : AppCompatActivity(), OnTaskClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val auth = FirebaseAuth.getInstance()
+        if (auth.currentUser == null) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
+
         setContentView(amb.root)
 
         // Configura a toolbar customizada e remove o título padrão
